@@ -27,7 +27,7 @@ class _ResetPassState extends State<ResetPass> {
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF1467B3),
         centerTitle: true,
-        title: Image.asset('Logo/LogoWhite/logoFullWhite.png', fit: BoxFit.cover,height: 28),
+        title: Text("Reset Password"),
       ),
       body: Container(
         child: Padding(
@@ -36,15 +36,8 @@ class _ResetPassState extends State<ResetPass> {
             child: Column(
 
               children: <Widget>[
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Reset Password',
-                    style: TextStyle(color: Color(0xFF1467B3), fontSize: 18, fontWeight: FontWeight.w500,fontFamily: "Roboto"),
-                  ),
-                ),
                 SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 PasswordField(
                   fieldKey: _passwordFieldKey,

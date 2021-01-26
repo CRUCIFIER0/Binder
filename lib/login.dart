@@ -1,5 +1,5 @@
 import 'package:tmapp/FadeAnimation.dart';
-import 'package:tmapp/CustomPasswordField.dart';
+import 'package:tmapp/ReusableWidgets/CustomPasswordField.dart';
 import 'package:tmapp/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

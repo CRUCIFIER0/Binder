@@ -51,6 +51,12 @@ flutter:
   assets:
     - Logo/LogoWhite/logoFullWhite.svg
     - Logo/LogoWhite/logoFullWhite.png
+    - assests/images/AddEmpIcon.png
+    - assests/images/addEmpIoyee.png
+    - assests/images/DeleteEmpIcon.png
+    - assests/images/InvalidPersonalNo.png
+    - assests/images/LogoAddEmp.png
+    - assests/images/LogoDeleteEmp.png
     - assests/images/light-2.png
     - assests/images/light-1.png
     - assests/images/clock.png

@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:tmapp/productionoperator/firstop.dart';
-import 'package:tmapp/productionoperator/resetpassop.dart';
+import 'package:tmapp/maintainenceoperator/Firstmo.dart';
+import 'package:tmapp/maintainenceoperator/resetpassmo.dart';
 
-class UserProfileop extends StatefulWidget {
+class Profilemo extends StatefulWidget {
   @override
-  _UserProfileState createState() => _UserProfileState();
+  _ProfilemoState createState() => _ProfilemoState();
 }
 
-class _UserProfileState extends State<UserProfileop> {
-
-  //int ci=3;
-  String _email;
-
+class _ProfilemoState extends State<Profilemo> {
   gotoSecondActivity(BuildContext context){
 
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ResetPassop()),
+      MaterialPageRoute(builder: (context) => ResetPassmo()),
     );
   }
   Future<bool> _onBackPressed(){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Firstop()),
+      MaterialPageRoute(builder: (context) => Firstmo()),
     );
   }
+
+  String _email;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -201,5 +199,3 @@ class _UserProfileState extends State<UserProfileop> {
     );
   }
 }
-
-

@@ -26,8 +26,7 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
                 );
             },
           ),
-          title:Image.asset('Logo/LogoWhite/logoFullWhite.png', fit: BoxFit.cover,height: 28),
-          centerTitle: true,
+
           backgroundColor: Color(0xFF1467B3),
 
         ),
@@ -98,7 +97,44 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
                           alignment: Alignment.topRight,
                           child: Text( "Department ",style: TextStyle(fontFamily: 'Roboto', color: Color(0x801467b3), fontSize: 14,fontWeight: FontWeight.w500)),
                         ),
+                        Container(
+                          margin: EdgeInsets.only(top: 370,left: 60,bottom: 20),
+                          alignment: Alignment.bottomLeft,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              ////////
+                              print('Edit');
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.edit,color: Color(0xFF1467B3)),
+                                Text( "  Edit ",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 14,fontWeight: FontWeight.w500)),
 
+                              ],
+                            ),
+
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 370,left: 220,bottom: 20),
+                          alignment: Alignment.bottomRight,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              ////////
+                              print('Delete');
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.delete,color: Color(0xFF1467B3)),
+                                Text( "  Delete ",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 14,fontWeight: FontWeight.w500)),
+
+                              ],
+                            ),
+
+                          ),
+                        ),
 
                       ]  ),
 
@@ -140,6 +176,7 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
                         ],
                       ),
                       Container(
+                        alignment: Alignment.center,
                         //padding:EdgeInsets.only(top: 400,left:20,right: 20) ,
                         child:new SizedBox(
                           //width: double.infinity,

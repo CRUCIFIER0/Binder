@@ -1,13 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tmapp/productionoperator/firstop.dart';
-import 'package:tmapp/productionsupervisor/listcomp.dart';
+import 'package:tmapp/maintainenceoperator/Firstmo.dart';
 
-class ComaplintDetails extends StatefulWidget {
+class UpdateStatus extends StatefulWidget {
   @override
   _ComaplintDetailsState createState() => _ComaplintDetailsState();
 }
 enum SingingCharacter { lafayette, jefferson }
-class _ComaplintDetailsState extends State<ComaplintDetails> {
+class _ComaplintDetailsState extends State<UpdateStatus> {
   SingingCharacter  _radioValue1= SingingCharacter.lafayette;
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,11 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Firstop()),
+                MaterialPageRoute(builder: (context) => Firstmo()),
               );
             },
           ),
+
           backgroundColor: Color(0xFF1467B3),
 
         ),
@@ -33,7 +34,6 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 20,),
                 Card(
                   margin: EdgeInsets.only(top: 10,left: 20,right: 20),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -95,44 +95,7 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
                           alignment: Alignment.topRight,
                           child: Text( "Department ",style: TextStyle(fontFamily: 'Roboto', color: Color(0x801467b3), fontSize: 14,fontWeight: FontWeight.w500)),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(top: 370,left: 60,bottom: 20),
-                          alignment: Alignment.bottomLeft,
-                          child: InkWell(
-                            splashColor: Colors.blue.withAlpha(30),
-                            onTap: () {
-                              ////////
-                              print('Edit');
-                            },
-                            child: Row(
-                              children: <Widget>[
-                                Icon(Icons.edit,color: Color(0xFF1467B3)),
-                                Text( "  Edit ",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 14,fontWeight: FontWeight.w500)),
 
-                              ],
-                            ),
-
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 370,left: 220,bottom: 20),
-                          alignment: Alignment.bottomRight,
-                          child: InkWell(
-                            splashColor: Colors.blue.withAlpha(30),
-                            onTap: () {
-                              ////////
-                              print('Delete');
-                            },
-                            child: Row(
-                              children: <Widget>[
-                                Icon(Icons.delete,color: Color(0xFF1467B3)),
-                                Text( "  Delete ",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 14,fontWeight: FontWeight.w500)),
-
-                              ],
-                            ),
-
-                          ),
-                        ),
 
                       ]  ),
 
@@ -145,48 +108,110 @@ class _ComaplintDetailsState extends State<ComaplintDetails> {
                     children: <Widget>[
                       Container(
                         alignment: Alignment.topLeft,
-                        padding: EdgeInsets.only(top: 20,left: 20),
-                        child: Text("Verify",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 18,fontWeight: FontWeight.w500)),
+                        padding: EdgeInsets.all(20.0),
+                        child: Text("Update Status",style: TextStyle(fontFamily: 'Roboto', color: Color(0xFF1467B3), fontSize: 18,fontWeight: FontWeight.w500)),
                       ),
                       Row(
                         children: <Widget>[
-                          new Radio(
-                            value: 0,
-                            groupValue: _radioValue1,
-                            //onChanged: _handleRadioValueChange1,
+                          SizedBox(
+                            width: 20,
                           ),
-                          new Text(
-                            'Solved',
-                            style: new TextStyle(fontFamily: 'Roboto',fontSize: 16.0),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: <Widget>[
+                                  new Radio(
+                                    value: 0,
+                                    groupValue: _radioValue1,
+                                    //onChanged: _handleRadioValueChange1,
+                                  ),
+                                  new Text(
+                                    'Solved',
+                                    style: new TextStyle(fontFamily: 'Roboto',fontSize: 14.0),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  new Radio(
+                                    value: 3,
+                                    groupValue: _radioValue1,
+                                    //onChanged: _handleRadioValueChange1,
+                                  ),
+                                  new Text(
+                                    'Pending',
+                                    style: new TextStyle(fontFamily: 'Roboto',fontSize: 14.0),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
-                          new Radio(
-                            value: 1,
-                            groupValue: _radioValue1,
-                            //onChanged: _handleRadioValueChange1,
-                          ),
-                          new Text(
-                            'Not Solved',
-                            style: new TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 16.0,
-                            ),
-                          ),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  new Radio(
+                                    value: 1,
+                                    groupValue: _radioValue1,
+                                    //onChanged: _handleRadioValueChange1,
+                                  ),
+                                  new Text(
+                                    'Ongoing',
+                                    style: new TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  new Radio(
+                                    value: 4,
+                                    groupValue: _radioValue1,
+                                    //onChanged: _handleRadioValueChange1,
+                                  ),
+                                  new Text(
+                                    'Transfer to AME',
+                                    style: new TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+
+                          )
+
                         ],
                       ),
                       Container(
-                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(left: 20,right: 20),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Remarks',
+
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Container(
                         //padding:EdgeInsets.only(top: 400,left:20,right: 20) ,
                         child:new SizedBox(
                           //width: double.infinity,
                           child: new RaisedButton(
-                            child: new Text("Verify",style: TextStyle(fontFamily: 'Roboto', color: Colors.white, fontSize: 16),textAlign: TextAlign.center,),
+                            child: new Text("Update",style: TextStyle(fontFamily: 'Roboto', color: Colors.white, fontSize: 16),textAlign: TextAlign.center,),
                             color: Color(0xFF1467B3),
                             onPressed:() {/** */} ,
                           ),
                         ),
 
                       ),
-                      SizedBox(height: 10,)
+                      SizedBox(height: 20,)
 
 
                     ],

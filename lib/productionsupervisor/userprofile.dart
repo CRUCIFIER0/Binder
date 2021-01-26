@@ -9,7 +9,6 @@ class UserProfile extends StatefulWidget {
 
 class _UserProfileState extends State<UserProfile> {
 
-  //int ci=3;
   String _email;
 
   gotoSecondActivity(BuildContext context){
@@ -34,7 +33,7 @@ class _UserProfileState extends State<UserProfile> {
           automaticallyImplyLeading: false,
           centerTitle: true,
           backgroundColor: Color(0xFF1467B3),
-          title: Image.asset('Logo/LogoWhite/logoFullWhite.png', fit: BoxFit.cover,height: 28),
+          title: Text("User Profile"),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -44,15 +43,8 @@ class _UserProfileState extends State<UserProfile> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'User Profile',
-                        style: TextStyle(color: Color(0xFF1467B3), fontSize: 18, fontWeight: FontWeight.w500,fontFamily: "Roboto"),
-                      ),
-                    ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     TextField(
                       enabled: false,
@@ -112,9 +104,9 @@ class _UserProfileState extends State<UserProfile> {
                       height: 20,
                     ),
                     TextField(
+                      enabled: false,
                       decoration: InputDecoration(
                           hintText: "Phone Number",
-                        hintStyle: TextStyle(color: Color(0xFF1467B3)),
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
                         contentPadding:
@@ -125,20 +117,21 @@ class _UserProfileState extends State<UserProfile> {
                         enabledBorder:OutlineInputBorder(
                             borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
                         ),
-                        suffixIcon: const Icon(
-                          Icons.edit,
-                          color: Color(0xFF1467B3),
-                        ),
+//                        suffixIcon: const Icon(
+//                          Icons.edit,
+//                          color: Color(0xFF1467B3),
+//                        ),
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     TextFormField(
-                      autovalidate: true,
+                      enabled: false,
+                      //autovalidate: true,
                       decoration: InputDecoration(
                           hintText: "Email ID",
-                        hintStyle: TextStyle(color: Color(0xFF1467B3)),
+
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
                         contentPadding:
@@ -149,16 +142,14 @@ class _UserProfileState extends State<UserProfile> {
                         enabledBorder:OutlineInputBorder(
                             borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
                         ),
-                        suffixIcon: const Icon(
-                          Icons.edit,
-                          color: Color(0xFF1467B3),
-                        ),
+//                        suffixIcon: const Icon(
+//                          Icons.edit,
+//                          color: Color(0xFF1467B3),
+//                        ),
                       ),
-                      validator: (input) => !input.contains('@') ? 'Not a valid email' : null,
-                      onSaved: (input) => _email=input,
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 35 ,
                     ),
                     SizedBox(
                       width: 400,
@@ -171,33 +162,12 @@ class _UserProfileState extends State<UserProfile> {
                         padding: EdgeInsets.all(8.0),
                         splashColor: Colors.blueAccent,
                         onPressed: () {
-                          /*...*/
-                        },
-                        child: Text(
-                          "Save Changes",
-                          style: TextStyle(fontSize: 15.0),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 400,
-                      height: 45,
-                      child: OutlineButton(
-                        textColor: Color(0xFF1666f0),
-                        disabledTextColor: Colors.black,
-                        padding: EdgeInsets.all(8.0),
-                        splashColor: Colors.blueAccent,
-                        onPressed: () {
                           gotoSecondActivity(context);
                         },
                         child: Text(
                           "Reset Password",
-                          style: TextStyle(fontSize: 15.0, color: Color(0xFF1467B3)),
+                          style: TextStyle(fontSize: 15.0),
                         ),
-                        borderSide: BorderSide(color: Color(0xFF1467B3)),
                       ),
                     ),
                     SizedBox(

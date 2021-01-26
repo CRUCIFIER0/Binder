@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:tmapp/productionoperator/firstop.dart';
-import 'package:tmapp/productionoperator/resetpassop.dart';
+import 'package:tmapp/systemadmin/firstadmin.dart';
+import 'package:tmapp/systemadmin/homepageadmin.dart';
+import 'package:tmapp/systemadmin/resetPasswordAdmin.dart';
 
-class UserProfileop extends StatefulWidget {
+class UserProfileAdmin extends StatefulWidget {
   @override
-  _UserProfileState createState() => _UserProfileState();
+  _UserProfileAdminState createState() => _UserProfileAdminState();
 }
 
-class _UserProfileState extends State<UserProfileop> {
-
-  //int ci=3;
+class _UserProfileAdminState extends State<UserProfileAdmin> {
   String _email;
-
-  gotoSecondActivity(BuildContext context){
-
+  Future<bool> _onBackPressed() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ResetPassop()),
+      MaterialPageRoute(builder: (context) => Firstadmin()),
     );
   }
-  Future<bool> _onBackPressed(){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Firstop()),
-    );
-  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -44,9 +36,8 @@ class _UserProfileState extends State<UserProfileop> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-
                     SizedBox(
-                      height: 15,
+                      height: 20,
                     ),
                     TextField(
                       enabled: false,
@@ -54,14 +45,17 @@ class _UserProfileState extends State<UserProfileop> {
                         hintText: "Personal No.",
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
-                        contentPadding:
-                        const EdgeInsets.only(left: 14.0, bottom: 15.0, top: 15.0),
+                        contentPadding: const EdgeInsets.only(
+                            left: 14.0, bottom: 15.0, top: 15.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color.fromRGBO(93, 153, 252,100)),
+                          borderSide: BorderSide(
+                              color: Color.fromRGBO(93, 153, 252, 100)),
                         ),
-                        enabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
-                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color:
+                                    Color.fromRGBO(223, 232, 247, 100)) //dfe8f7
+                            ),
                       ),
                     ),
                     SizedBox(
@@ -73,14 +67,17 @@ class _UserProfileState extends State<UserProfileop> {
                         hintText: "Name",
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
-                        contentPadding:
-                        const EdgeInsets.only(left: 14.0, bottom: 15.0, top: 15.0),
+                        contentPadding: const EdgeInsets.only(
+                            left: 14.0, bottom: 15.0, top: 15.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color.fromRGBO(93, 153, 252,100)),
+                          borderSide: BorderSide(
+                              color: Color.fromRGBO(93, 153, 252, 100)),
                         ),
-                        enabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
-                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color:
+                                    Color.fromRGBO(223, 232, 247, 100)) //dfe8f7
+                            ),
                       ),
                     ),
                     SizedBox(
@@ -92,14 +89,17 @@ class _UserProfileState extends State<UserProfileop> {
                         hintText: "Designation",
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
-                        contentPadding:
-                        const EdgeInsets.only(left: 14.0, bottom: 15.0, top: 15.0),
+                        contentPadding: const EdgeInsets.only(
+                            left: 14.0, bottom: 15.0, top: 15.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color.fromRGBO(93, 153, 252,100)),
+                          borderSide: BorderSide(
+                              color: Color.fromRGBO(93, 153, 252, 100)),
                         ),
-                        enabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
-                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color:
+                                    Color.fromRGBO(223, 232, 247, 100)) //dfe8f7
+                            ),
                       ),
                     ),
                     SizedBox(
@@ -111,14 +111,17 @@ class _UserProfileState extends State<UserProfileop> {
                         hintText: "Phone Number",
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
-                        contentPadding:
-                        const EdgeInsets.only(left: 14.0, bottom: 15.0, top: 15.0),
+                        contentPadding: const EdgeInsets.only(
+                            left: 14.0, bottom: 15.0, top: 15.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color.fromRGBO(93, 153, 252,100)),
+                          borderSide: BorderSide(
+                              color: Color.fromRGBO(93, 153, 252, 100)),
                         ),
-                        enabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
-                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color:
+                                    Color.fromRGBO(223, 232, 247, 100)) //dfe8f7
+                            ),
                       ),
                     ),
                     SizedBox(
@@ -126,23 +129,29 @@ class _UserProfileState extends State<UserProfileop> {
                     ),
                     TextFormField(
                       enabled: false,
-                      autovalidate: true,
                       decoration: InputDecoration(
                         hintText: "Email ID",
                         filled: true,
                         fillColor: Color.fromRGBO(20, 103, 179, 0.05),
-                        contentPadding:
-                        const EdgeInsets.only(left: 14.0, bottom: 15.0, top: 15.0),
+                        contentPadding: const EdgeInsets.only(
+                            left: 14.0, bottom: 15.0, top: 15.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color.fromRGBO(93, 153, 252,100)), //5d99fc
+                          borderSide: BorderSide(
+                              color:
+                                  Color.fromRGBO(93, 153, 252, 100)), //5d99fc
                         ),
-                        enabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Color.fromRGBO(223, 232, 247,100))    //dfe8f7
-                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color:
+                                    Color.fromRGBO(223, 232, 247, 100)) //dfe8f7
+                            ),
                       ),
+                      validator: (input) =>
+                          !input.contains('@') ? 'Not a valid email' : null,
+                      onSaved: (input) => _email = input,
                     ),
                     SizedBox(
-                      height: 35,
+                      height: 30,
                     ),
                     SizedBox(
                       width: 400,
@@ -155,7 +164,11 @@ class _UserProfileState extends State<UserProfileop> {
                         padding: EdgeInsets.all(8.0),
                         splashColor: Colors.blueAccent,
                         onPressed: () {
-                          gotoSecondActivity(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResetPasswordAdmin()),
+                          );
                         },
                         child: Text(
                           "Reset Password",
@@ -182,12 +195,13 @@ class _UserProfileState extends State<UserProfileop> {
                         padding: EdgeInsets.all(8.0),
                         splashColor: Colors.blueAccent,
                         onPressed: () {
-                          /*...*/
+                          /***/
                         },
                         borderSide: BorderSide(color: Color(0xFF1467B3)),
                         child: Text(
                           "Log Out",
-                          style: TextStyle(fontSize: 15.0,color: Color(0xFF1467B3)),
+                          style: TextStyle(
+                              fontSize: 15.0, color: Color(0xFF1467B3)),
                         ),
                       ),
                     )
@@ -201,5 +215,3 @@ class _UserProfileState extends State<UserProfileop> {
     );
   }
 }
-
-

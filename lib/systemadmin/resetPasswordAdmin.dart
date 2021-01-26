@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tmapp/productionoperator/userprofileop.dart';
-import 'package:tmapp/productionoperator/passwordop.dart';
+import 'package:tmapp/systemadmin/firstadmin.dart';
+import 'package:tmapp/systemadmin/passwordFieldAdmin.dart';
+import 'dart:io';
+import 'package:tmapp/systemadmin/userprofileadmin.dart';
 
-class ResetPassop extends StatefulWidget {
+class ResetPasswordAdmin extends StatefulWidget {
   @override
-  _ResetPassState createState() => _ResetPassState();
+  _ResetPasswordAdminState createState() => _ResetPasswordAdminState();
 }
 
-class _ResetPassState extends State<ResetPassop> {
-
-  goBackToPreviousScreen(BuildContext context){
-
-    Navigator.pop(context);
-
-  }
+class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
   String _password;
   final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
   final _passwordFieldKey1 = GlobalKey<FormFieldState<String>>();
@@ -34,13 +30,8 @@ class _ResetPassState extends State<ResetPassop> {
           padding: EdgeInsets.fromLTRB(30, 60, 30, 10),
           child: Form(
             child: Column(
-
               children: <Widget>[
-
-                SizedBox(
-                  height: 15,
-                ),
-                PasswordFieldop(
+                PasswordFieldAdmin(
                   fieldKey: _passwordFieldKey,
                   hintText: 'Current Password',
                   onFieldSubmitted: (String value) {
@@ -52,7 +43,7 @@ class _ResetPassState extends State<ResetPassop> {
                 SizedBox(
                   height: 20,
                 ),
-                PasswordFieldop(
+                PasswordFieldAdmin(
                   fieldKey: _passwordFieldKey1,
                   hintText: 'Enter New Password',
                   onFieldSubmitted: (String value) {
@@ -64,7 +55,7 @@ class _ResetPassState extends State<ResetPassop> {
                 SizedBox(
                   height: 20,
                 ),
-                PasswordFieldop(
+                PasswordFieldAdmin(
                   fieldKey: _passwordFieldKey2,
                   hintText: 'Enter New Password',
                   onFieldSubmitted: (String value) {
@@ -107,14 +98,18 @@ class _ResetPassState extends State<ResetPassop> {
                       padding: EdgeInsets.all(8.0),
                       splashColor: Colors.blueAccent,
                       onPressed: () {
-                        goBackToPreviousScreen(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Firstadmin()),
+                        );
                       },
                       child: Text(
                         "Cancel",
-                        style: TextStyle(fontSize: 15.0,color: Color(0xFF1467B3)),
+                        style:
+                            TextStyle(fontSize: 15.0, color: Color(0xFF1467B3)),
                       ),
-                      color: Color(0xFF1467B3)
-                  ),
+                      color: Color(0xFF1467B3)),
                 ),
               ],
             ),
@@ -123,5 +118,4 @@ class _ResetPassState extends State<ResetPassop> {
       ),
     );
   }
-
 }
